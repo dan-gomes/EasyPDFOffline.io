@@ -156,6 +156,21 @@ ul {
     font-size: 1.6rem;
 }
 
+.logo-img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+.footer-logo-img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+
 .nav-links {
     display: flex;
     align-items: center;
