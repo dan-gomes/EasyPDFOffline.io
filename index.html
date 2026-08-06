@@ -1,181 +1,489 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EasyPDF Offline - Ferramentas PDF Seguras</title>
-    <meta name="description"
-        content="Aplica&ccedil;&atilde;o web progressiva (PWA) para manipular PDFs inteiramente no seu navegador de forma offline e segura.">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@500;700;800&display=swap"
-        rel="stylesheet">
-
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Favicon (ícone do EasyPDF Offline) -->
+    <title>EasyPDF Offline - Editor de PDF 100% Offline para Windows</title>
+    <meta name="description" content="Editor de PDF completo que funciona sem internet. Comprima, converta, edite e junte PDFs com total privacidade. Disponível na Microsoft Store.">
+    <meta name="keywords" content="PDF offline, editor PDF Windows, comprimir PDF, converter PDF, juntar PDF, PDF sem internet, privacidade PDF">
+    <meta property="og:title" content="EasyPDF Offline - Seus PDFs nunca saem do seu computador">
+    <meta property="og:description" content="8 ferramentas profissionais de PDF que funcionam 100% offline. Licença única, sem assinatura.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="og-image.png">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="icon-192.png">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+    <!-- Navbar -->
     <header class="navbar">
         <div class="container nav-content">
-            <div class="logo">
+            <a href="#" class="logo">
                 <img src="icon-192.png" alt="EasyPDF Offline" class="logo-img">
                 <span>EasyPDF <strong>Offline</strong></span>
-            </div>
-            <nav class="nav-links">
+            </a>
+            <nav class="nav-links" id="navLinks">
                 <a href="#features">Recursos</a>
+                <a href="#how-it-works">Como Funciona</a>
+                <a href="#pricing">Licença</a>
                 <a href="#privacy">Privacidade</a>
-                <a href="privacy.html">Política</a>
-                <a href="#about">Sobre</a>
-                <a href="https://github.com/danie/EasyPDFOffline" target="_blank" class="btn btn-outline"><i
-                        class="fa-brands fa-github"></i> GitHub</a>
+                <a href="#faq">FAQ</a>
             </nav>
+            <div class="nav-actions">
+                <a href="https://apps.microsoft.com/store/detail/easypdf-offline" target="_blank" class="btn btn-primary btn-sm">
+                    <i class="fa-brands fa-microsoft"></i> Baixar na Store
+                </a>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
         </div>
     </header>
 
+    <!-- Hero -->
     <section class="hero">
         <div class="container hero-content">
             <div class="hero-text">
-                <div class="badge">100% Offline &amp; Seguro</div>
-                <h1>Suas ferramentas de PDF,<br><span class="gradient-text">Direto no Navegador.</span></h1>
-                <p>Junte PDFs, converta imagens e manipule documentos sem nunca enviar um &uacute;nico arquivo para a
-                    internet. R&aacute;pido, seguro e totalmente gratuito.</p>
+                <div class="badge"><i class="fa-solid fa-wifi-slash"></i> 100% Offline</div>
+                <h1>Seu editor de PDF completo,<br><span class="gradient-text">direto no seu computador.</span></h1>
+                <p class="hero-subtitle">8 ferramentas profissionais que funcionam sem internet. Seus arquivos nunca saem da sua máquina. Rápido, seguro e com licença única — sem assinatura mensal.</p>
                 <div class="hero-buttons">
-                    <a href="#" class="btn btn-primary btn-large">Acessar o App <i
-                            class="fa-solid fa-arrow-right"></i></a>
-                    <a href="#features" class="btn btn-secondary btn-large">Saiba mais</a>
+                    <a href="https://apps.microsoft.com/store/detail/easypdf-offline" target="_blank" class="btn btn-primary btn-large">
+                        <i class="fa-brands fa-microsoft"></i> Disponível na Microsoft Store
+                    </a>
+                    <a href="#features" class="btn btn-ghost btn-large">
+                        Ver recursos <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+                </div>
+                <div class="hero-trust">
+                    <div class="trust-item"><i class="fa-solid fa-shield-halved"></i> Zero upload</div>
+                    <div class="trust-item"><i class="fa-solid fa-infinity"></i> Licença vitalícia</div>
+                    <div class="trust-item"><i class="fa-brands fa-windows"></i> Windows 10/11</div>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="glass-mockup">
-                    <div class="mockup-header">
-                        <span class="dot red"></span>
-                        <span class="dot yellow"></span>
-                        <span class="dot green"></span>
+            <div class="hero-visual">
+                <div class="app-mockup">
+                    <div class="mockup-titlebar">
+                        <div class="titlebar-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <span class="titlebar-text">EasyPDF Offline</span>
                     </div>
-                    <div class="mockup-body">
-                        <i class="fa-solid fa-shield-halved lock-icon"></i>
-                        <h3>Processamento Local</h3>
-                        <p>Seus arquivos s&atilde;o processados apenas no seu dispositivo usando WebAssembly.</p>
-                        <div class="progress-bar">
-                            <div class="progress"></div>
+                    <div class="mockup-content">
+                        <div class="mockup-sidebar">
+                            <div class="sidebar-item active"><i class="fa-solid fa-compress"></i></div>
+                            <div class="sidebar-item"><i class="fa-solid fa-file-word"></i></div>
+                            <div class="sidebar-item"><i class="fa-solid fa-images"></i></div>
+                            <div class="sidebar-item"><i class="fa-solid fa-layer-group"></i></div>
+                            <div class="sidebar-item"><i class="fa-solid fa-pen-to-square"></i></div>
+                        </div>
+                        <div class="mockup-main">
+                            <div class="mockup-card">
+                                <i class="fa-solid fa-file-pdf"></i>
+                                <span>relatorio-2026.pdf</span>
+                                <span class="mockup-size">14.2 MB</span>
+                            </div>
+                            <div class="mockup-progress">
+                                <div class="mockup-progress-bar"></div>
+                            </div>
+                            <div class="mockup-result">
+                                <i class="fa-solid fa-check-circle"></i>
+                                <span>1.8 MB (-87%)</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- Elementos flutuantes para a est&eacute;tica -->
-                <div class="float-icon icon-1"><i class="fa-regular fa-image"></i></div>
-                <div class="float-icon icon-2"><i class="fa-solid fa-file-pdf"></i></div>
-                <div class="float-icon icon-3"><i class="fa-solid fa-layer-group"></i></div>
+                <div class="float-badge badge-1"><i class="fa-solid fa-lock"></i> Criptografado</div>
+                <div class="float-badge badge-2"><i class="fa-solid fa-bolt"></i> 3s</div>
             </div>
         </div>
     </section>
 
+    <!-- Features -->
     <section id="features" class="features">
         <div class="container">
-            <div class="section-title">
-                <h2>Tudo o que voc&ecirc; precisa</h2>
-                <p>Ferramentas poderosas baseadas em Blazor WebAssembly e .NET 10</p>
+            <div class="section-header">
+                <span class="section-badge">Recursos</span>
+                <h2>8 ferramentas profissionais.<br>Zero dependência de internet.</h2>
+                <p>Tudo que você precisa para trabalhar com PDFs, em um único aplicativo leve e rápido.</p>
             </div>
-
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon"><i class="fa-solid fa-images"></i></div>
-                    <h3>Imagens para PDF</h3>
-                    <p>Converta m&uacute;ltiplas imagens (JPG, PNG, WebP) em um &uacute;nico documento PDF consolidado,
-                        com ajuste autom&aacute;tico de tamanho.</p>
+                    <div class="feature-icon icon-compress"><i class="fa-solid fa-compress"></i></div>
+                    <h3>Comprimir PDF</h3>
+                    <p>Reduza até 87% do tamanho sem perda visível de qualidade. Ideal para enviar por e-mail.</p>
                 </div>
-
                 <div class="feature-card">
-                    <div class="feature-icon"><i class="fa-solid fa-object-group"></i></div>
+                    <div class="feature-icon icon-edit"><i class="fa-solid fa-pen-to-square"></i></div>
+                    <h3>Editar PDF</h3>
+                    <p>Visualizador completo com anotações, preenchimento de formulários e edição de texto.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon icon-merge"><i class="fa-solid fa-layer-group"></i></div>
                     <h3>Juntar PDFs</h3>
-                    <p>Mescle v&aacute;rios documentos PDF em um arquivo &uacute;nico e organizado. Escolha a ordem com
-                        alguns cliques.</p>
+                    <p>Mescle múltiplos documentos em um único arquivo organizado na ordem que preferir.</p>
                 </div>
-
                 <div class="feature-card">
-                    <div class="feature-icon"><i class="fa-solid fa-mobile-screen"></i></div>
-                    <h3>Progressive Web App</h3>
-                    <p>Instale o EasyPDF como um aplicativo nativo no seu Windows, Mac, iOS ou Android e use at&eacute;
-                        mesmo sem internet.</p>
+                    <div class="feature-icon icon-word"><i class="fa-solid fa-file-word"></i></div>
+                    <h3>PDF para Word</h3>
+                    <p>Converta documentos PDF em Word editável, preservando formatação e layout.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon icon-topdf"><i class="fa-solid fa-file-pdf"></i></div>
+                    <h3>Word para PDF</h3>
+                    <p>Transforme arquivos .docx em PDF com layout fixo, pronto para compartilhar.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon icon-pptx"><i class="fa-solid fa-file-powerpoint"></i></div>
+                    <h3>PowerPoint para PDF</h3>
+                    <p>Converta apresentações .pptx mantendo slides, fontes e formatação intactos.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon icon-images"><i class="fa-solid fa-images"></i></div>
+                    <h3>Imagens para PDF</h3>
+                    <p>Combine JPG, PNG, BMP e TIFF em um documento PDF consolidado com ajuste automático.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon icon-extract"><i class="fa-solid fa-photo-film"></i></div>
+                    <h3>PDF para Imagens</h3>
+                    <p>Extraia cada página como imagem de alta qualidade. Perfeito para apresentações.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- How it works -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Como Funciona</span>
+                <h2>Simples assim. Três passos.</h2>
+                <p>Sem cadastro, sem upload, sem espera.</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon"><i class="fa-brands fa-microsoft"></i></div>
+                    <h3>Instale pela Microsoft Store</h3>
+                    <p>Baixe o app gratuitamente. Ative com sua chave de licença em segundos.</p>
+                </div>
+                <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon"><i class="fa-solid fa-file-arrow-up"></i></div>
+                    <h3>Abra seus arquivos</h3>
+                    <p>Arraste seus PDFs, imagens ou documentos Word/PowerPoint para o app.</p>
+                </div>
+                <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon"><i class="fa-solid fa-check-double"></i></div>
+                    <h3>Pronto. Sem internet.</h3>
+                    <p>O processamento acontece instantaneamente na sua máquina. Salve e use.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="comparison">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Comparação</span>
+                <h2>Por que escolher o EasyPDF Offline?</h2>
+                <p>Veja como nos comparamos com as ferramentas online tradicionais.</p>
+            </div>
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th class="highlight-col">
+                                <img src="icon-192.png" alt="" class="table-logo">
+                                EasyPDF Offline
+                            </th>
+                            <th>Ferramentas Online<br><small>(iLovePDF, SmallPDF, etc.)</small></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Funciona sem internet</td>
+                            <td class="highlight-col"><i class="fa-solid fa-check check"></i></td>
+                            <td><i class="fa-solid fa-xmark cross"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Arquivos ficam no seu PC</td>
+                            <td class="highlight-col"><i class="fa-solid fa-check check"></i></td>
+                            <td><i class="fa-solid fa-xmark cross"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Sem limite de tamanho de arquivo</td>
+                            <td class="highlight-col"><i class="fa-solid fa-check check"></i></td>
+                            <td><i class="fa-solid fa-xmark cross"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Sem assinatura mensal</td>
+                            <td class="highlight-col"><i class="fa-solid fa-check check"></i></td>
+                            <td><i class="fa-solid fa-xmark cross"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Velocidade de processamento</td>
+                            <td class="highlight-col"><i class="fa-solid fa-bolt"></i> Instantâneo</td>
+                            <td><i class="fa-solid fa-clock"></i> Depende da conexão</td>
+                        </tr>
+                        <tr>
+                            <td>Conformidade LGPD</td>
+                            <td class="highlight-col"><i class="fa-solid fa-check check"></i> Total</td>
+                            <td><i class="fa-solid fa-triangle-exclamation warning"></i> Parcial</td>
+                        </tr>
+                        <tr>
+                            <td>Custo em 12 meses</td>
+                            <td class="highlight-col"><strong>R$ 69,90</strong> (uma vez)</td>
+                            <td><strong>R$ 360+</strong> (assinatura)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Licença</span>
+                <h2>Pague uma vez. Use para sempre.</h2>
+                <p>Sem assinatura, sem renovação. A licença é vitalícia e vinculada à sua máquina.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Pessoal</h3>
+                        <p class="pricing-desc">Ideal para uso individual</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-currency">R$</span>
+                        <span class="price-value">69</span>
+                        <span class="price-cents">,90</span>
+                    </div>
+                    <p class="price-note">por máquina &middot; pagamento único</p>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> Todas as 8 ferramentas</li>
+                        <li><i class="fa-solid fa-check"></i> Atualizações gratuitas</li>
+                        <li><i class="fa-solid fa-check"></i> Licença vitalícia</li>
+                        <li><i class="fa-solid fa-check"></i> 1 máquina ativada</li>
+                        <li><i class="fa-solid fa-check"></i> Suporte por e-mail</li>
+                    </ul>
+                    <a href="#buy" class="btn btn-primary btn-block">Comprar Licença</a>
+                </div>
+                <div class="pricing-card pricing-featured">
+                    <div class="pricing-badge">Melhor custo</div>
+                    <div class="pricing-header">
+                        <h3>Equipe</h3>
+                        <p class="pricing-desc">Para 3 ou mais máquinas</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-currency">R$</span>
+                        <span class="price-value">39</span>
+                        <span class="price-cents">,90</span>
+                    </div>
+                    <p class="price-note">por máquina &middot; mínimo 3 licenças</p>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> Todas as 8 ferramentas</li>
+                        <li><i class="fa-solid fa-check"></i> Atualizações gratuitas</li>
+                        <li><i class="fa-solid fa-check"></i> Licença vitalícia</li>
+                        <li><i class="fa-solid fa-check"></i> 3+ máquinas ativadas</li>
+                        <li><i class="fa-solid fa-check"></i> Suporte prioritário</li>
+                        <li><i class="fa-solid fa-check"></i> Nota fiscal para empresa</li>
+                    </ul>
+                    <a href="#buy" class="btn btn-primary btn-block">Comprar Licenças</a>
+                    <p class="pricing-savings"><i class="fa-solid fa-tag"></i> Economia de 43% por máquina</p>
+                </div>
+            </div>
+            <div class="pricing-guarantee">
+                <i class="fa-solid fa-rotate-left"></i>
+                <p><strong>Garantia de 7 dias.</strong> Se não gostar, devolvemos seu dinheiro sem perguntas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy -->
     <section id="privacy" class="privacy">
         <div class="container privacy-content">
             <div class="privacy-text">
-                <h2>Privacidade &eacute; a nossa <span class="highlight">prioridade</span></h2>
-                <p>Ao contr&aacute;rio de outras ferramentas de PDF na web, o EasyPDF Offline n&atilde;o envia seus
-                    documentos para nenhum servidor na nuvem.</p>
+                <span class="section-badge">Privacidade</span>
+                <h2>Seus documentos são <span class="highlight">só seus</span>.</h2>
+                <p>Diferente de ferramentas online que enviam seus arquivos para servidores na nuvem, o EasyPDF Offline processa tudo localmente no seu computador.</p>
                 <ul class="check-list">
-                    <li><i class="fa-solid fa-check"></i> Sem uploads demorados</li>
-                    <li><i class="fa-solid fa-check"></i> Sem downloads perigosos</li>
-                    <li><i class="fa-solid fa-check"></i> Os arquivos nunca saem da sua m&aacute;quina</li>
-                    <li><i class="fa-solid fa-check"></i> Zero telemetria de documentos</li>
+                    <li><i class="fa-solid fa-shield-halved"></i> <strong>Zero upload</strong> — nenhum byte sai da sua máquina</li>
+                    <li><i class="fa-solid fa-eye-slash"></i> <strong>Zero telemetria</strong> — não rastreamos seus documentos</li>
+                    <li><i class="fa-solid fa-server"></i> <strong>Zero servidores</strong> — não temos onde armazenar seus dados</li>
+                    <li><i class="fa-solid fa-scale-balanced"></i> <strong>LGPD nativa</strong> — conformidade total sem esforço</li>
                 </ul>
-                <p><a href="privacy.html">Leia nossa Política de Privacidade completa</a></p>
+                <a href="privacy.html" class="link-arrow">Ler Política de Privacidade completa <i class="fa-solid fa-arrow-right"></i></a>
             </div>
-            <div class="privacy-illustration">
-                <div class="shield-container">
-                    <i class="fa-solid fa-shield-cat shield-main"></i>
-                    <div class="pulse-ring"></div>
+            <div class="privacy-visual">
+                <div class="privacy-diagram">
+                    <div class="diagram-your-pc">
+                        <i class="fa-solid fa-laptop"></i>
+                        <span>Seu PC</span>
+                        <div class="diagram-badge"><i class="fa-solid fa-lock"></i></div>
+                    </div>
+                    <div class="diagram-arrow">
+                        <div class="arrow-blocked">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </div>
+                    <div class="diagram-cloud">
+                        <i class="fa-solid fa-cloud"></i>
+                        <span>Nuvem</span>
+                    </div>
+                </div>
+                <p class="diagram-caption">Seus arquivos processados localmente. Nada é enviado.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Perguntas Frequentes</span>
+                <h2>Dúvidas? Respondemos aqui.</h2>
+            </div>
+            <div class="faq-grid">
+                <details class="faq-item">
+                    <summary>O app precisa de internet para funcionar?</summary>
+                    <p>Não. Após a ativação inicial da licença (que requer uma conexão única), o EasyPDF Offline funciona 100% sem internet. Todas as conversões e edições acontecem localmente na sua máquina.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Como funciona o download?</summary>
+                    <p>O EasyPDF Offline está disponível exclusivamente na Microsoft Store. Basta buscar por "EasyPDF Offline" na Store, instalar gratuitamente, e ativar com sua chave de licença comprada neste site.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Posso usar em mais de um computador?</summary>
+                    <p>Cada licença individual (R$ 69,90) ativa uma máquina. Se precisar de 3 ou mais, o plano Equipe sai por R$ 39,90 por máquina. Você recebe chaves individuais para cada uma.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Quais formatos são suportados?</summary>
+                    <p>PDF, DOCX (Word), PPTX (PowerPoint), JPG, PNG, BMP, GIF e TIFF. Você pode converter entre esses formatos, comprimir PDFs e editar documentos diretamente.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Tem limite de tamanho de arquivo?</summary>
+                    <p>Não há limite imposto pelo software. O processamento depende apenas da capacidade do seu computador. Arquivos de 200+ MB são processados sem problema em máquinas modernas.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>E se eu formatar o computador?</summary>
+                    <p>Basta reinstalar da Microsoft Store e reativar com a mesma chave. A licença permanece vinculada ao seu registro, não ao hardware específico.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Funciona no Windows 10?</summary>
+                    <p>Sim. O EasyPDF Offline é compatível com Windows 10 (versão 1809+) e Windows 11. Requer WebView2, que já vem instalado no Windows 11 e é atualizado automaticamente no Windows 10.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Tem garantia de devolução?</summary>
+                    <p>Sim. Oferecemos 7 dias de garantia incondicional. Se não atender suas expectativas, devolvemos 100% do valor sem perguntas.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-final">
+        <div class="container text-center">
+            <h2>Chega de enviar seus PDFs para a nuvem.</h2>
+            <p>Instale o EasyPDF Offline e tenha controle total sobre seus documentos.</p>
+            <div class="cta-buttons">
+                <a href="https://apps.microsoft.com/store/detail/easypdf-offline" target="_blank" class="btn btn-primary btn-large">
+                    <i class="fa-brands fa-microsoft"></i> Baixar na Microsoft Store
+                </a>
+                <a href="#pricing" class="btn btn-ghost btn-large">
+                    Ver preços <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+            <p class="cta-note">Download gratuito. Ativação com chave de licença.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="icon-192.png" alt="EasyPDF Offline" class="footer-logo-img">
+                    <span>EasyPDF <strong>Offline</strong></span>
+                </div>
+                <p class="footer-tagline">Ferramentas de PDF profissionais que respeitam sua privacidade.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Produto</h4>
+                    <a href="#features">Recursos</a>
+                    <a href="#pricing">Licença</a>
+                    <a href="#faq">FAQ</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="privacy.html">Política de Privacidade</a>
+                    <a href="terms.html">Termos de Uso</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Suporte</h4>
+                    <a href="mailto:suporte@easypdfoffline.com">suporte@easypdfoffline.com</a>
+                    <a href="https://apps.microsoft.com/store/detail/easypdf-offline" target="_blank">Microsoft Store</a>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section id="about" class="cta">
-        <div class="container text-center">
-            <h2>Pronto para otimizar seus PDFs?</h2>
-            <p>Acesse agora mesmo e comece a usar as ferramentas no seu navegador.</p>
-            <a href="#" class="btn btn-primary btn-large cta-btn">Abrir Aplicativo <i
-                    class="fa-solid fa-rocket"></i></a>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container footer-content">
-            <div class="footer-logo">
-                <img src="icon-192.png" alt="EasyPDF Offline" class="footer-logo-img"> EasyPDF <span class="light-text">Offline</span>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 EasyPDF Offline. Todos os direitos reservados.</p>
+                <p>Feito com <i class="fa-solid fa-heart" style="color: var(--primary)"></i> em .NET 10 + Blazor</p>
             </div>
-            <p>&copy; 2026 EasyPDF Offline. Desenvolvido com <i class="fa-solid fa-heart" style="color: #ff4b4b;"></i>,
-                Blazor WebAssembly e .NET 10.</p>
-            <p><a href="privacy.html" style="color: inherit;">Política de Privacidade</a></p>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling para os links da navbar
+        // Mobile menu toggle
+        const toggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        toggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            toggle.querySelector('i').classList.toggle('fa-bars');
+            toggle.querySelector('i').classList.toggle('fa-xmark');
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.navbar');
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    navLinks.classList.remove('active');
+                }
             });
         });
 
-        // Adicionar classe de "scrolled" &agrave; navbar quando descer a p&aacute;gina
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
+        // FAQ toggle animation
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('toggle', function () {
+                if (this.open) {
+                    document.querySelectorAll('.faq-item').forEach(other => {
+                        if (other !== this) other.removeAttribute('open');
+                    });
+                }
+            });
         });
     </script>
 </body>
-
 </html>

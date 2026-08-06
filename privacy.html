@@ -1,225 +1,200 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Política de Privacidade - EasyPDF Offline</title>
-    <meta name="description" content="Política de Privacidade do EasyPDF Offline.">
-
-    <!-- Google Fonts -->
+    <meta name="description" content="Política de Privacidade do EasyPDF Offline. Seus documentos nunca saem do seu computador.">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@500;700;800&display=swap"
-        rel="stylesheet">
-
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Favicon (ícone do EasyPDF Offline) -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="apple-touch-icon" href="icon-192.png">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-
     <style>
-        /* Estilos específicos da página de política, alinhados ao tema */
-        .legal {
-            padding: 140px 0 80px 0;
-            min-height: 100vh;
-        }
-
-        .legal-container {
-            max-width: 820px;
-        }
-
-        .legal h1 {
-            font-family: var(--font-heading);
-            font-size: 2.6rem;
+        .legal-page { padding: 140px 0 80px; }
+        .legal-content { max-width: 720px; margin: 0 auto; }
+        .legal-content h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: var(--gray-900);
             margin-bottom: 8px;
-            background: var(--gradient-brand);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
-
-        .legal .updated {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 32px;
-            display: block;
+        .legal-date {
+            font-size: 0.85rem;
+            color: var(--gray-400);
+            margin-bottom: 40px;
         }
-
-        .legal-card {
-            background: var(--surface);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            padding: 40px;
+        .legal-content h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--gray-800);
+            margin-top: 40px;
+            margin-bottom: 12px;
         }
-
-        .legal-card h2 {
-            font-family: var(--font-heading);
-            font-size: 1.35rem;
-            margin: 32px 0 12px 0;
-            color: var(--text-main);
+        .legal-content p, .legal-content li {
+            font-size: 0.95rem;
+            color: var(--gray-600);
+            line-height: 1.8;
+            margin-bottom: 12px;
         }
-
-        .legal-card h2:first-child {
-            margin-top: 0;
+        .legal-content ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
         }
-
-        .legal-card p {
-            color: var(--text-muted);
-            margin-bottom: 14px;
+        .legal-content li { margin-bottom: 8px; }
+        .legal-highlight {
+            background: var(--primary-bg);
+            border-left: 4px solid var(--primary);
+            padding: 16px 20px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin: 24px 0;
         }
-
-        .legal-card ul {
-            list-style: none;
-            margin-bottom: 14px;
+        .legal-highlight p {
+            color: var(--gray-700);
+            font-weight: 500;
+            margin-bottom: 0;
         }
-
-        .legal-card ul li {
-            color: var(--text-muted);
-            padding-left: 26px;
-            position: relative;
-            margin-bottom: 10px;
-        }
-
-        .legal-card ul li::before {
-            content: '\f00c';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            color: #10b981;
-            position: absolute;
-            left: 0;
-            top: 2px;
-            font-size: 0.8rem;
-        }
-
-        .legal-card a {
-            color: var(--primary);
-        }
-
         .back-link {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            margin-bottom: 24px;
-            color: var(--text-muted);
+            gap: 6px;
+            font-size: 0.88rem;
             font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 32px;
+            transition: gap var(--transition);
         }
-
-        .back-link:hover {
-            color: var(--text-main);
-        }
+        .back-link:hover { gap: 10px; }
     </style>
 </head>
-
 <body>
     <header class="navbar scrolled">
         <div class="container nav-content">
-            <div class="logo">
+            <a href="index.html" class="logo">
                 <img src="icon-192.png" alt="EasyPDF Offline" class="logo-img">
                 <span>EasyPDF <strong>Offline</strong></span>
-            </div>
+            </a>
             <nav class="nav-links">
-                <a href="index.html">Início</a>
                 <a href="index.html#features">Recursos</a>
-                <a href="privacy.html">Política</a>
+                <a href="index.html#pricing">Licença</a>
+                <a href="index.html#faq">FAQ</a>
             </nav>
+            <div class="nav-actions">
+                <a href="https://apps.microsoft.com/store/detail/easypdf-offline" target="_blank" class="btn btn-primary btn-sm">
+                    <i class="fa-brands fa-microsoft"></i> Baixar na Store
+                </a>
+            </div>
         </div>
     </header>
 
-    <section class="legal">
-        <div class="container legal-container">
+    <section class="legal-page">
+        <div class="container legal-content">
             <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Voltar ao início</a>
             <h1>Política de Privacidade</h1>
-            <span class="updated">Última atualização: 2 de agosto de 2026</span>
+            <p class="legal-date">Última atualização: 5 de agosto de 2026</p>
 
-            <div class="legal-card">
-                <p>O EasyPDF Offline ("aplicativo", "nós") é um software para conversão, edição e processamento de
-                    arquivos PDF e documentos. Esta política descreve como o aplicativo trata seus dados. Ao utilizar o
-                    EasyPDF Offline, você concorda com as práticas aqui descritas.</p>
-
-                <h2>1. Processamento local dos seus arquivos</h2>
-                <p>O EasyPDF Offline foi projetado para funcionar de forma offline. Todo o processamento de documentos —
-                    conversão, edição, OCR, compressão, leitura e gravação de arquivos — ocorre localmente, no seu
-                    próprio dispositivo. Nós não enviamos, transmitimos, armazenamos nem temos acesso ao conteúdo dos
-                    seus documentos, imagens ou arquivos.</p>
-
-                <h2>2. Dados que coletamos</h2>
-                <p>O aplicativo transmite dados aos nossos servidores apenas para fins de licenciamento e ativação do
-                    produto. Nesses casos, podemos coletar:</p>
-                <ul>
-                    <li>Chave de licença informada por você para ativar o produto.</li>
-                    <li>Identificador de instalação: um código gerado no seu dispositivo, usado para vincular a licença
-                        ao computador e evitar uso indevido.</li>
-                    <li>Endereço de e-mail, quando fornecido no momento da compra ou ativação.</li>
-                    <li>Data de ativação e de validações da licença.</li>
-                </ul>
-                <p>Não coletamos o conteúdo dos seus arquivos, histórico de navegação, localização, contatos, dados
-                    biométricos, nem realizamos telemetria ou rastreamento de uso do aplicativo.</p>
-
-                <h2>3. Dados armazenados apenas no seu dispositivo</h2>
-                <p>Alguns dados são gravados somente localmente e nunca são enviados a nós, como a lista de arquivos
-                    recentes, as preferências do aplicativo e a chave de licença, armazenada de forma protegida
-                    (criptografia DPAPI) no seu perfil de usuário do Windows.</p>
-
-                <h2>4. Como usamos os dados</h2>
-                <p>Utilizamos os dados de licença exclusivamente para validar e ativar sua licença, prevenir uso não
-                    autorizado ou fraude e prestar suporte técnico. Não vendemos, alugamos nem compartilhamos seus dados
-                    com terceiros para fins de marketing.</p>
-
-                <h2>5. Serviços de terceiros</h2>
-                <ul>
-                    <li><strong>Processamento de pagamentos:</strong> as compras são realizadas por meio de plataformas
-                        de pagamento de terceiros. Esses provedores tratam seus dados de pagamento conforme suas
-                        próprias políticas. Nós não armazenamos números de cartão de crédito.</li>
-                    <li><strong>Infraestrutura de licenciamento:</strong> os dados de licença são armazenados e
-                        processados na plataforma Supabase, com comunicação por conexão criptografada (HTTPS).</li>
-                </ul>
-
-                <h2>6. Retenção de dados</h2>
-                <p>Mantemos os dados de licença enquanto sua licença estiver ativa e pelo período necessário para
-                    cumprir obrigações legais. Você pode solicitar a exclusão dos seus dados entrando em contato
-                    conosco.</p>
-
-                <h2>7. Seus direitos</h2>
-                <p>Conforme a legislação aplicável (incluindo a LGPD, no Brasil), você pode solicitar acesso, correção
-                    ou exclusão dos seus dados pessoais. Para exercer esses direitos, use o contato abaixo.</p>
-
-                <h2>8. Segurança</h2>
-                <p>Adotamos medidas técnicas razoáveis para proteger os dados de licença, incluindo transmissão
-                    criptografada (HTTPS) e armazenamento protegido no dispositivo.</p>
-
-                <h2>9. Crianças</h2>
-                <p>O EasyPDF Offline não é direcionado a menores de 13 anos e não coletamos intencionalmente dados de
-                    crianças.</p>
-
-                <h2>10. Alterações nesta política</h2>
-                <p>Podemos atualizar esta política periodicamente. Alterações relevantes serão indicadas pela data de
-                    "Última atualização" no topo deste documento.</p>
-
-                <h2>11. Contato</h2>
-                <p>
-                    <strong>Responsável:</strong> EasyPDF Offline<br>
-                    <strong>E-mail:</strong> <a
-                        href="mailto:suporteeasypdfoffline@hotmail.com">suporteeasypdfoffline@hotmail.com</a>
-                </p>
+            <div class="legal-highlight">
+                <p><i class="fa-solid fa-shield-halved"></i> Resumo: O EasyPDF Offline processa todos os seus documentos localmente no seu computador. Nenhum arquivo é enviado para servidores externos. Não coletamos, armazenamos ou acessamos seus documentos.</p>
             </div>
+
+            <h2>1. Sobre o EasyPDF Offline</h2>
+            <p>O EasyPDF Offline é um aplicativo desktop para Windows que oferece ferramentas de manipulação de PDF (compressão, conversão, edição, mesclagem) com processamento 100% local. O aplicativo é distribuído pela Microsoft Store e ativado por meio de uma chave de licença.</p>
+
+            <h2>2. Dados que NÃO coletamos</h2>
+            <p>Para sermos claros sobre o que <strong>não</strong> fazemos:</p>
+            <ul>
+                <li><strong>Seus documentos:</strong> PDFs, imagens, arquivos Word e PowerPoint processados pelo aplicativo nunca são enviados para nenhum servidor. Todo processamento acontece exclusivamente na sua máquina.</li>
+                <li><strong>Conteúdo dos arquivos:</strong> Não temos acesso ao conteúdo dos seus documentos. Não lemos, analisamos ou indexamos nenhuma informação dos seus arquivos.</li>
+                <li><strong>Telemetria de uso:</strong> Não rastreamos quais ferramentas você usa, com que frequência ou quais tipos de arquivo processa.</li>
+                <li><strong>Dados de navegação:</strong> Não utilizamos cookies de rastreamento, pixels ou scripts de analytics no aplicativo.</li>
+            </ul>
+
+            <h2>3. Dados que coletamos</h2>
+            <p>Coletamos apenas o mínimo necessário para o funcionamento do sistema de licenciamento:</p>
+            <ul>
+                <li><strong>Chave de ativação:</strong> A chave fornecida no momento da compra é usada para validar sua licença.</li>
+                <li><strong>E-mail de compra:</strong> Utilizado exclusivamente para entrega da chave de licença e comunicação de suporte.</li>
+                <li><strong>Identificador de máquina:</strong> Um hash anônimo gerado localmente para vincular a licença ao dispositivo. Não contém informações pessoais identificáveis.</li>
+            </ul>
+
+            <h2>4. Ativação da licença</h2>
+            <p>A única comunicação de rede realizada pelo EasyPDF Offline é durante a ativação inicial da licença. Nesse momento:</p>
+            <ul>
+                <li>Sua chave de ativação é enviada ao nosso servidor de licenças para validação.</li>
+                <li>Após validação bem-sucedida, a licença é armazenada localmente de forma criptografada (DPAPI) no seu computador.</li>
+                <li>Nas execuções subsequentes, o aplicativo funciona 100% offline, sem nenhuma comunicação de rede.</li>
+            </ul>
+
+            <h2>5. Armazenamento local</h2>
+            <p>O aplicativo armazena localmente no seu computador:</p>
+            <ul>
+                <li>Arquivo de licença criptografado (protegido por DPAPI, vinculado ao seu usuário Windows)</li>
+                <li>Preferências de configuração do aplicativo</li>
+                <li>Cache temporário de processamento (limpo automaticamente)</li>
+            </ul>
+            <p>Todos esses dados ficam exclusivamente no seu dispositivo e são acessíveis apenas pelo seu usuário do Windows.</p>
+
+            <h2>6. Compartilhamento de dados</h2>
+            <p>Não vendemos, alugamos ou compartilhamos seus dados pessoais com terceiros. Ponto final.</p>
+            <p>Os únicos terceiros envolvidos na operação são:</p>
+            <ul>
+                <li><strong>Microsoft Store:</strong> Responsável pela distribuição e download do aplicativo. A política de privacidade da Microsoft se aplica ao processo de download.</li>
+                <li><strong>Processador de pagamento:</strong> A transação financeira da compra da licença é processada por um gateway de pagamento seguro. Não armazenamos dados de cartão de crédito.</li>
+            </ul>
+
+            <h2>7. Segurança</h2>
+            <p>Implementamos as seguintes medidas de segurança:</p>
+            <ul>
+                <li>Criptografia DPAPI para armazenamento local da licença</li>
+                <li>Validação de tipos de arquivo por assinatura binária (magic bytes) para prevenir processamento de arquivos maliciosos</li>
+                <li>Comunicação HTTPS para ativação de licença</li>
+                <li>Nenhum dado sensível em texto plano no disco</li>
+            </ul>
+
+            <h2>8. Conformidade com LGPD</h2>
+            <p>O EasyPDF Offline é nativamente compatível com a Lei Geral de Proteção de Dados (LGPD) e regulamentações similares (GDPR) porque:</p>
+            <ul>
+                <li>Não coletamos dados pessoais além do estritamente necessário (minimização)</li>
+                <li>Não transferimos dados para servidores externos</li>
+                <li>O usuário tem controle total sobre seus dados locais</li>
+                <li>A desinstalação remove completamente todos os dados do aplicativo</li>
+            </ul>
+
+            <h2>9. Seus direitos</h2>
+            <p>Você tem direito a:</p>
+            <ul>
+                <li><strong>Acesso:</strong> Solicitar quais dados temos associados à sua licença</li>
+                <li><strong>Exclusão:</strong> Solicitar a remoção do seu registro de licença</li>
+                <li><strong>Portabilidade:</strong> Solicitar transferência da licença para outro dispositivo</li>
+            </ul>
+            <p>Para exercer qualquer desses direitos, entre em contato pelo e-mail: <a href="mailto:suporte@easypdfoffline.com" style="color: var(--primary);">suporte@easypdfoffline.com</a></p>
+
+            <h2>10. Alterações nesta política</h2>
+            <p>Caso esta política seja atualizada, publicaremos a versão revisada nesta página com a data de atualização. Para alterações significativas, notificaremos os usuários por e-mail.</p>
+
+            <h2>11. Contato</h2>
+            <p>Para dúvidas sobre esta política de privacidade ou sobre o tratamento de dados:</p>
+            <ul>
+                <li><strong>E-mail:</strong> <a href="mailto:suporte@easypdfoffline.com" style="color: var(--primary);">suporte@easypdfoffline.com</a></li>
+            </ul>
         </div>
     </section>
 
-    <footer>
-        <div class="container footer-content">
-            <div class="footer-logo">
-                <img src="icon-192.png" alt="EasyPDF Offline" class="footer-logo-img"> EasyPDF <span
-                    class="light-text">Offline</span>
+    <footer class="footer">
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 EasyPDF Offline. Todos os direitos reservados.</p>
+                <p>Feito com <i class="fa-solid fa-heart" style="color: var(--primary)"></i> em .NET 10 + Blazor</p>
             </div>
-            <p>&copy; 2026 EasyPDF Offline.</p>
-            <p><a href="index.html" style="color: inherit;">Voltar ao início</a></p>
         </div>
     </footer>
-</body>
 
+    <script>
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.navbar');
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
+</body>
 </html>
