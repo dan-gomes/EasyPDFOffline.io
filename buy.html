@@ -394,11 +394,10 @@
                     <div class="quantity-section" id="quantitySection">
                         <label>Quantidade de licenças</label>
                         <div class="quantity-control">
-                            <button class="qty-btn" onclick="changeQty(-1)">-</button>
                             <span class="qty-value" id="qtyValue">3</span>
-                            <button class="qty-btn" onclick="changeQty(1)">+</button>
+                            <span class="qty-note" style="margin:0;">licenças no pacote</span>
                         </div>
-                        <p class="qty-note">Mínimo de 3 licenças. Cada licença ativa uma máquina.</p>
+                        <p class="qty-note">Pacote de 3 licenças. Cada licença ativa uma máquina. Precisa de mais? Fale com suporte@easypdfoffline.com.</p>
                     </div>
 
                     <!-- Email -->
@@ -510,12 +509,12 @@
             team: 39.90
         };
 
-        // TODO: Substitua pelos seus Stripe Payment Links reais
+        // Stripe Payment Links (produção)
+        // personal  = R$ 69,90  (1 licença)
+        // team_3    = R$ 119,70 (pacote de 3 licenças)
         const STRIPE_LINKS = {
-            personal: 'https://buy.stripe.com/SEU_LINK_PESSOAL',
-            team_3: 'https://buy.stripe.com/SEU_LINK_EQUIPE_3',
-            team_5: 'https://buy.stripe.com/SEU_LINK_EQUIPE_5',
-            team_10: 'https://buy.stripe.com/SEU_LINK_EQUIPE_10'
+            personal: 'https://buy.stripe.com/6oU7sL9Phg7K8H5fgX8AE00',
+            team_3: 'https://buy.stripe.com/bJe28raTlaNq0az1q78AE01'
         };
 
         function selectPlan(plan) {
@@ -526,12 +525,6 @@
             document.getElementById('planTeam').classList.toggle('selected', plan === 'team');
             document.getElementById('quantitySection').classList.toggle('visible', plan === 'team');
 
-            updateSummary();
-        }
-
-        function changeQty(delta) {
-            quantity = Math.max(3, Math.min(50, quantity + delta));
-            document.getElementById('qtyValue').textContent = quantity;
             updateSummary();
         }
 
@@ -560,16 +553,10 @@
                 return;
             }
 
-            // Determina o link do Stripe baseado no plano e quantidade
-            let stripeLink;
-            if (currentPlan === 'personal') {
-                stripeLink = STRIPE_LINKS.personal;
-            } else {
-                // Mapeia para o link mais próximo ou usa query param
-                if (quantity <= 3) stripeLink = STRIPE_LINKS.team_3;
-                else if (quantity <= 5) stripeLink = STRIPE_LINKS.team_5;
-                else stripeLink = STRIPE_LINKS.team_10;
-            }
+            // Determina o link do Stripe baseado no plano
+            const stripeLink = currentPlan === 'personal'
+                ? STRIPE_LINKS.personal
+                : STRIPE_LINKS.team_3;
 
             // Adiciona email como prefill do Stripe Checkout
             const separator = stripeLink.includes('?') ? '&' : '?';
